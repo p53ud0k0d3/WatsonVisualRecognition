@@ -7,8 +7,6 @@ Watson is an IBM supercomputer that combines artificial intelligence (AI) and so
 
 IBM Bluemix is a cloud platform as a service (PaaS) developed by IBM. It supports several programming languages and services as well as integrated DevOps to build, run, deploy and manage applications on the cloud. 
 
-Visual Recognition understands the contents of images - visual concepts tag the image, find human faces, approximate age and gender, and find similar images in a collection. You can also train the service by creating your own custom concepts. Use Visual Recognition to detect a dress type in retail, identify spoiled fruit in inventory, and more. 
-
 ## Create a Bluemix account
 - Visit this [Link](https://www.ibm.com/cloud-computing/bluemix/) and signup for a 30 days free trial account.
 - Click **Services**
@@ -27,6 +25,45 @@ Install Watson Developer module
 `pip3 install watson_developer_cloud`
 
 ## Execution
-- Paste *api_key* into the file
-- Paste url of the image you want to analyse
 - Run the script using Python3
+- You have 3 choices
+  1. Visual Recognotion
+  2. Text Recognition
+  3. Facial Recognition
+
+### Visual Recognition
+Visual Recognition understands the contents of an image
+![Alt text](Sample%20images/car.jpg?raw=true)
+
+Output of analyzing above image will be
+```
+[{'class': 'subcompact car',
+  'score': 0.948,
+  'type_hierarchy': '/vehicle/subcompact car'},
+ {'class': 'car', 'score': 0.974},
+ {'class': 'vehicle', 'score': 0.974},
+ {'class': 'compact car',
+  'score': 0.53,
+  'type_hierarchy': '/vehicle/compact car'},
+ {'class': 'steel blue color', 'score': 0.894}]
+```
+
+### Text Recognition
+Text Recognition tries to read the text in a given image
+![Alt text](Sample%20images/hospital-sign-board.jpg?raw=true)
+
+Output of analyzing above image will be
+```
+hospital
+```
+
+### Facial Recognition
+Facial recognition tries to find human faces, approximate age, gender etc
+![Alt text](Sample%20images/barack_obama.jpg?raw=true)
+
+Output of analyzing above image will be
+```
+Name : Barack Obama
+Gender : MALE
+Age : 55-64
+```
